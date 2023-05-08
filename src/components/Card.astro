@@ -1,0 +1,53 @@
+---
+export interface Props{
+    title: string;
+    body: string;
+}
+
+const { title, body } = Astro.props as Props;
+---
+
+<a href="" class="card" id="card">
+    <div class="card-info" id='card-info'>
+        <h3>{ title }</h3>
+        <p>{ body }</p>
+    </div>
+</a>
+
+
+
+
+<style>
+    .card{
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 300px;
+        height: 300px;
+        margin-left: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+        padding: 15px;
+        background-image: url('../images/one.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .card-info{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
+        align-items: center;
+        
+        border-radius: 20px;
+        max-width: 200px;
+        max-height: 200px;
+        padding: 20px;
+        text-align: justify;
+    }
+</style>
+
+<script src="../javascript/card.js"></script>

@@ -1,0 +1,275 @@
+---
+import html from '../images/LogosHtml5.svg';
+import css from '../images/LogosCss3.svg';
+import javascript from '../images/LogosJavascript.svg';
+import react from '../images/LogosReact.svg';
+import vue from '../images/LogosVue.svg';
+import astro from '../images/SkillIconsAstro.svg';
+import profile from '../images/profile.png';
+---
+<section class="sec-header reveal">
+    <div class="wrapper">
+        <div class="full-header">
+            <div class="left-home">
+                <div class="firstSen">
+                    <h2 class="sen1">Hello, I'm</h2>
+                </div>
+                <div class="secondSen">
+                    <h1 class="sen2">Nicholsa Burn</h1>
+                </div>
+                <div class="thirdSen">
+                    <h2 class="sen3">Front-end Developer</h2>
+                </div>
+                <div class="fourthSen">
+                    <p class="sen4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown 
+                        printer took a galley of type and scrambled it to make a type specimen book. It has survived 
+                        not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                </div>
+                <div class="home-button">
+                    <button type="submit" id="home-button">Let's Talk</button>
+                </div>
+                <div class="stack">
+                    <h3 class="fifthSen">My Profile stack</h3>
+                </div>
+                <div class="stackIcon">
+                    <div class="icons">
+                        <img src={html} alt="html5" id="icon">
+                        <img src={css} alt="css3" id="icon">
+                        <img src={javascript} alt="javascript" id="icon">
+                        <img src={react} alt="react" id="icon">
+                        <img src={vue} alt="vue" id="icon">
+                        <img src={astro} alt="astro" id="icon">
+                    </div>
+                </div>
+            </div>
+            <div class="inhome-image">
+                <div class="home-image">
+                    <span></span>
+                    <span></span>
+                    <div class="po-img">
+                        <img src={profile} alt="Profile" id="hoge">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* HEADER SECTION  */
+    .sec-header{
+        overflow: auto;
+        height: 100%;
+        width: 100%;
+        line-height: 200%;
+        left: 0;
+        right: 0;
+        top: 0;
+        background-image: linear-gradient(#97D9E1, #D9AFD9);
+    }
+
+    .sec-header .wrapper{
+        padding: 30px 10px;
+    }
+
+    .sec-header .left-home{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: -100px;
+        margin-top: 50px;
+        padding-top: 50px;
+        width: 50%;
+        color: #fff;
+    }
+
+    .sec-header .firstSen .sen1{
+        font-weight: bold;
+        padding: 20px;
+        font-size: x-large;
+        opacity: 0;
+        animation: slideRight 1s ease forwards;
+        animation-delay: .7s;
+    }
+
+    .sec-header .secondSen .sen2{
+        padding: 20px;
+        font-weight: bolder;
+        font-size: xx-large;
+        opacity: 0;
+        animation: slideRight 1s ease forwards;
+        animation-delay: .7s;
+    }
+
+    .sec-header .thirdSen .sen3{
+        padding: 20px;
+        font-weight: bold;
+        font-size: x-large; 
+        opacity: 0;
+        animation: slideLeft 1s ease forwards;
+        animation-delay: 1s;
+    }
+
+    .sec-header .fourthSen .sen4{
+        padding: 20px;
+        font-size: large;
+        width: 500px;
+        text-align: justify;
+        line-height: 1.5;
+        opacity: 0;
+        animation: slideLeft 1s ease forwards;
+        animation-delay: 1.2s;
+    }
+
+    .home-button{
+        padding: 20px;
+    }
+    
+    .sec-header .home-button #home-button{
+        position: relative;
+        height: 60px;
+        width: 160px;
+        border-radius: 20px;
+        font-weight: bolder;
+        font-size: large;
+        border: none;
+        cursor: pointer;
+        color: #fff;
+        margin-top: 40px;
+        z-index: 1;
+        opacity: 0;
+        animation: slideTop 1s ease forwards;
+        animation-delay: 1.5s;
+    }
+
+    .sec-header .home-button #home-button::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        inset: 0;
+        background-image: linear-gradient(45deg, #9FACE6,#74EBD5, #9FACE6);
+        background-size: 200%;
+        background-position: 0 0;
+        z-index: -1;
+        border-radius: 20px;
+        filter: blur(5px);
+        transition: .5s ease;
+    }
+
+    .sec-header .home-button #home-button:hover::before{
+        background-position: 100% 0;
+    }
+
+    .sec-header .home-button #home-button::after{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        inset: 0;
+        background-image: linear-gradient(45deg, #9FACE6,#74EBD5, #9FACE6);
+        background-size: 200%;
+        background-position: 0 0;
+        z-index: -1;
+        border-radius: 20px;
+        transition: .5s ease;
+    }
+
+    .sec-header .home-button #home-button:hover::after{
+        background-position: 100% 0;
+    }
+
+    .sec-header .stack .fifthSen{
+        margin-top: 30px;
+        padding: 20px;
+        margin-bottom: 35px;
+        opacity: 0;
+        animation: slideTop 1s ease forwards;
+        animation-delay: 1.7s;
+    }
+
+    .sec-header .stackIcon .icons{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: -30px;
+        margin-right: 200px;
+        padding: 20px;
+        opacity: 0;
+        animation: slideTop 1s ease forwards;
+        animation-delay: 1.8s;
+    }
+
+    .sec-header .stackIcon .icons #icon{
+        height: 60px;
+        width: 60px;
+    }
+
+    .sec-header .full-header{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        line-height: 3vh;
+        margin-top: 20px;
+    }
+
+    .inhome-image{
+        width: 410px;
+        height: 410px;
+    }
+    
+    .inhome-image .home-image {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        animation: zoomIn 1s ease forwards;
+        animation-delay: 1.9s;
+    }
+
+    .inhome-image .home-image::after{
+        content: '';
+        position: absolute;
+        width: 380px;
+        height: 380px;
+        background-image: linear-gradient(#97D9E1, #D9AFD9);
+        border-radius: 50%;
+    } 
+
+    .home-image span{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(#9FACE6,#74EBD5);
+        border-radius: 50%;
+    }
+
+    .home-image span:nth-child(1){
+        filter: blur(10px);
+    }
+
+    .home-image .po-img{
+        position: relative;
+        width: 380px;
+        height: 380px;
+        border-radius: 50%;
+        z-index: 1;
+        overflow: hidden;
+    }
+
+    .po-img img{
+        position: absolute;
+        top: 30px;
+        left: 48%;
+        transform: translateX(-50%);
+        max-width: 350px;
+        object-fit: cover;
+    }
+</style>
+
+<script src="../javascript/secheader.js"></script>

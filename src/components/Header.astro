@@ -1,0 +1,136 @@
+---
+
+import logo from "../images/Color logo - no background.svg";
+import { Icon } from "astro-icon";
+import resume from "../pdf/Resume.pdf";
+
+---
+<header class="reveal">
+    <div class="wrapper">
+        <a href="/"><img src={logo} alt="logo"></a>
+        <nav>
+            <ul>
+                <li class="name" id="home"><a style='--i:1;' href="/">Home</a></li>
+                <li class="name" id="about"><a style='--i:2;' href="#about">About</a></li>
+                <li class="name" id="project"><a style='--i:3;' href="#project">Project</a></li>
+                <li class="name" id="resume"><a style='--i:4;' href={resume}>Resume</a></li>
+                <li class="name" id="contact"><a style='--i:5;' href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <form action="">
+            <Icon name="healthicons:magnifying-glass"/>
+            <input type="text" class="input" id="input" placeholder="search...">
+            <button type="submit" class="search">search</button>
+        </form>
+    </div>
+</header>
+
+<style>
+    header{
+        position: sticky;
+        height: 103px;
+        left: 0;
+        right: 0;
+        top: 0;
+        padding: 20px;
+        z-index: 2;
+        background-color: #97D9E1;
+    }
+
+    header *{
+        display: inline;
+    }
+
+    header .wrapper{
+    padding: 30px 10px;
+    overflow: hidden;
+    display: flex;  
+    align-items: center;
+    justify-content: space-between;
+    background-color: #97D9E1;
+    height: 40px;
+    }
+
+    img {
+        padding: 10px;
+        height: 80px;
+        opacity: 0;
+        animation: slideTop .5s ease forwards;
+    }
+
+
+    header form{
+        display: inline-flex;
+        align-items: center;
+        opacity: 0;
+        animation: slideTop .5s ease forwards;
+        animation-delay: 1s;
+    }
+
+    li a{
+        display: inline-block;
+        text-decoration: none;
+        color: #fff;
+        padding: 25px;
+        font-size: large;
+        opacity: 0;
+        transition: 0.5s ease-in-out;
+        animation: slideTop .5s ease forwards;
+        animation-delay: calc(.2s * var(--i));
+    }
+
+    li a:hover{
+        color: rgb(57,136,170);
+        transition: 0.5s;
+    }
+   
+    form{
+        width: 250px;
+        display: flex;
+        align-items: center;
+        border: 1px solid rgb(57,136,170);
+    }
+
+    /* form:hover{
+        border: 2px solid aquamarine;
+        transition: 0.5s;
+    } */
+
+    header form input{
+        width: 2500px;
+        outline: none;
+        cursor: text;
+        border: none;
+    }
+
+    .wrapper form .input{
+        padding-left: 30px;
+    }
+
+    form input[type=text]{
+        padding: 10px;
+        font-size: 10px;
+        border: 1px solid grey;
+    }
+
+    form input::placeholder{
+        color: #9E9DA3;
+    }
+
+    form button{
+        background-color: rgb(57,136,170);
+        padding: 8px;
+        border: 1px solid grey;
+        cursor: pointer;
+    }
+
+    [astro-icon = "healthicons:magnifying-glass"]{
+        position: absolute;
+        height: 17px;
+        font-size: 1.1em;
+        padding-left: 6px;
+        color: black;
+    }
+</style>
+
+<script src="../javascript/header.js"></script>

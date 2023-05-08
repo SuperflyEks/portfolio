@@ -1,0 +1,206 @@
+---
+import { Icon } from 'astro-icon';
+---
+
+<section class="about reveal" id="abouts">
+    <div class="wrapper">
+        <div class="about-info">
+            <div class="about-description">
+                <div class="about-name">
+                    <h1>About Nicholsa Burn</h1>
+                </div>
+                <div class="about-par">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                        sed do eiusmod tempor incididunt ut labore et dolore magna 
+                        aliqua. Ut enim ad minim veniam, 
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
+                        ea commodo consequat. Duis aute irure dolor in reprehenderit 
+                        in voluptate velit esse cillum 
+                        dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
+                        cupidatat non proident, sunt in culpa qui officia deserunt
+                        mollit anim id est laborum.
+                    </p>
+                </div>
+            </div>
+            <div class="button-sec">
+                <div class="hire-info">
+                    <button type="button" id="hire-button">
+                        <h2>Hire-me</h2>
+                    </button>
+                    <button type="button" id="port-button">
+                        <h2>Portfolio</h2>
+                    </button>
+                </div>
+                <div class="contact-info">
+                    <div class="con-num">
+                        <Icon name='teenyicons:whatsapp-outline'/>
+                        <p class='num'>(+234) 901 234 5678</p>
+                    </div>
+                    <span></span>
+                    <div class="con-mail">
+                        <Icon name='lucide:mail'/>
+                        <p class="mail">contact@email.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>           
+</section>
+
+<style>
+    /* ABOUT SECTION */
+    .about{
+        overflow: auto;
+        height: 100%;
+        width: 100%;
+        line-height: 200%;
+        background-image: linear-gradient(#D9AFD9, #9796f0);
+    }
+
+    .about .wrapper{
+        padding: 30px 10px;
+    }
+
+    .about-info{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .about-description{
+        justify-content: center;
+        align-items: center;
+        max-width: 700px;
+    }
+
+    .about-name{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        line-height: 3vh;
+        margin-top: 20px;
+        padding: 20px;
+    }
+
+    .about-name h1{
+        font-weight: bold;
+        font-size: xx-large;
+        opacity: 0;
+        animation: slideTop 1s ease forwards;
+        animation-delay: .5s;
+    }
+
+    .about-par p{
+        font-size: large;
+        opacity: 0;
+        animation: slideTop 1s ease forwards;
+        animation-delay: .7s;
+    }
+
+    .button-sec{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 700px;
+        width: 100%;
+        margin-top: 50px;
+    }
+
+    .hire-info button{
+        position: relative;
+        height: 60px;
+        width: 120px;
+        cursor: pointer;
+        border: none;
+        border-radius: 20px;
+        color: #fff;
+        opacity: 0;
+        animation: slideRight 1s ease forwards;
+        animation-delay: 1s;
+    }
+
+    .hire-info button::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        inset: 0;
+        background-image: linear-gradient(45deg, #9FACE6,#74EBD5, #9FACE6);
+        background-size: 200%;
+        background-position: 0 0;
+        z-index: -1;
+        border-radius: 20px;
+        filter: blur(5px);
+        transition: .5s ease;
+    }
+
+    .hire-info button:hover::before{
+        background-position: 100% 0;
+    }
+
+    .hire-info button::after{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        inset: 0;
+        background-image: linear-gradient(45deg, #9FACE6,#74EBD5, #9FACE6);
+        background-size: 200%;
+        background-position: 0 0;
+        z-index: -1;
+        border-radius: 20px;
+        transition: .5s ease;
+    }
+
+    .hire-info button:hover::after{
+        background-position: 100% 0;
+    }
+
+    .hire-info #port-button{
+        margin-left: 10px;
+    }
+
+    .contact-info{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        float: right;
+        opacity: 0;
+        animation: slideLeft 1s ease forwards;
+        animation-delay: 1.2s;
+    }
+
+    .contact-info .con-num{
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+        border: 1px hidden;
+        box-shadow: 0 0 5px -1px #554444;
+        padding: 10px;
+    }
+
+    .contact-info .con-mail{
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+        border: 1px hidden;
+        box-shadow: 0 0 5px -1px #554444;
+        padding: 10px;
+    }
+
+
+    span{
+        width: 30px;
+    }
+
+    [astro-icon]{
+        height: 40px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+
+<script src="../javascript/about.js"></script>

@@ -1,0 +1,264 @@
+---
+import logo from "../images/Color logo - no background.svg";
+import facebook from '../images/LogosFacebook.svg';
+import twitter from '../images/LogosTwitter.svg';
+import instagram from '../images/SkillIconsInstagram.svg';
+import linkedin from '../images/SkillIconsLinkedin.svg';
+import resume from '../pdf/Resume.pdf';
+import { Icon } from 'astro-icon';
+---
+
+<footer class="footer reveal">
+    <div class="wrapper">
+        <div class="end">
+            <div class="logo">
+                <div class="footer-logo">
+                    <img src={logo} alt="Arch Logo" id="logo">
+                </div>
+            </div>
+            <div class="contact-info">
+                <div class="address">
+                    <address class="add">5, Silverline St., Victoria Islang, Lagos</address>
+                </div>
+                <div class="num-mail">
+                    <div class="num">
+                        <p class="number">(+234) 901 234 5678</p>
+                    </div>
+                    <div class="mail">
+                        <p class="email">contact@email.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="links">
+                <div class="info-links">
+                    <ul>
+                        <li id="link-about"><a href="#about">About</a></li>
+                        <li id="link-project"><a href="#project">Projects</a></li>
+                        <li><a href={resume}>Resume</a></li>
+                        <li id="link-testimonial"><a href="#testimonial">Testimonials</a></li>
+                    </ul>
+                </div>
+                <div class="social-links">
+                    <div class="socials">
+                        <img src={facebook} alt="facebook" id='socials' >      
+                        <img src={twitter} alt="twitter" id='socials'>
+                        <img src={instagram} alt="instagram" id='socials'>
+                        <img src={linkedin} alt="linkedin" id='socials'>
+                    </div>
+                </div>
+            </div>
+            <div class="up-buttton">
+                <div class="up">
+                    <button class="upwardButton">
+                        <Icon name='ic:outline-arrow-upward'/>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<style>
+    footer{
+        display: flex;
+        background-color: #1D2B64;
+    }
+
+    footer .wrapper{
+        padding: 30px 10px;
+        width: 100%;
+    }
+
+    .footer .end{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    /* Logo */
+    .logo{
+        display: block;
+    }
+
+    .logo .footer-logo{
+        align-items: center;
+    }
+
+    #logo{
+        height: 200px;
+    }
+
+    /* Contact Info */
+    .contact-info{
+        display: flex;
+        flex-direction: column;
+        margin: 30px;
+        margin-left: -70px;
+        opacity: 0;
+        animation: slideTop 1s ease forwards;
+        animation-delay: 1.8s;
+    }
+
+    .contact-info .address{
+        margin-bottom: 30px;
+    }
+
+    .contact-info .num-mail{
+        margin-top: 20px;
+    }
+
+    .num-mail p{
+        padding-top: 3px;
+        padding-bottom: 6px;
+        border-bottom-style: solid;
+        border-bottom-width: 2px;
+        width: fit-content;
+    }
+
+    .num-mail .mail p{
+        margin-top: 20px;
+    }
+
+    /* Links */
+    .end .links{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .links{
+        opacity: 0;
+        animation: slideTop 1s ease forwards;
+        animation-delay: 1.8s;
+    }
+
+    .links .info-links{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 25px;
+    }
+
+    .info-links ul{
+        margin-left: -150%;
+    }
+
+    li{
+        position: relative;
+        line-height: 45px;
+        margin-bottom: 6px;
+    }
+
+    li::before{
+        content: '';
+        position: absolute;
+        border-bottom: 2px solid #fff;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        transform: scaleX(0);
+        transform-origin: 0 50%;
+        transition: transform .3s ease-in-out;
+    }
+
+    li:hover::before{
+        transform: scaleX(1);
+        transform-origin: 0 50%;
+        transition-delay: .3s;
+    }
+
+    .links .social-links .socials{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .social-links .socials{
+        margin-top: 20px;
+        height: 10px;
+    }
+
+    .socials #socials{
+        height: 30px;
+        margin: 10px;
+        padding-top: 10px;
+        filter: grayscale(1);
+        transition: 0.9s;
+    }
+
+    .socials #socials:hover{
+        filter: grayscale(0);
+    }
+
+
+    img{
+        opacity: 0;
+        animation: slideTop 1s ease forwards;
+        animation-delay: 1.8s;
+    }
+
+
+    /* Button */
+    .up-button{
+        position: relative;
+        height: 200px;
+        border: 1px solid black;
+    }
+
+    .up{
+        display: flex;
+        height: 180px;
+        justify-content: right;
+    }
+
+    button{
+        position: relative;
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+        z-index: 1;
+        opacity: 0;
+        animation: slideTop 1s ease forwards;
+        animation-delay: 1.8s;
+    }
+
+    button::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        inset: 0;
+        background-image: linear-gradient(45deg, #9FACE6,#74EBD5, #9FACE6);
+        background-size: 200%;
+        background-position: 0 0;
+        z-index: -1;
+        border-radius: 20px;
+        filter: blur(5px);
+        transition: .5s ease;
+    }
+
+    button:hover::before{
+        background-position: 100% 0;
+    }
+
+    button::after{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        inset: 0;
+        background-image: linear-gradient(45deg, #9FACE6,#74EBD5, #9FACE6);
+        background-size: 200%;
+        background-position: 0 0;
+        z-index: -1;
+        border-radius: 20px;
+        transition: .5s ease;
+    }
+
+    button:hover::after{
+        background-position: 100% 0;
+    }
+</style>
+
+<script src="../javascript/footer.js"></script>

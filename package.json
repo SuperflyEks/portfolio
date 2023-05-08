@@ -1,0 +1,17 @@
+{
+  "name": "portfolio",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^2.1.5",
+    "astro-google-fonts-optimizer": "^0.2.2",
+    "astro-icon": "^0.8.0"
+  }
+}

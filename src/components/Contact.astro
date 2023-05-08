@@ -1,0 +1,220 @@
+---
+import { Icon } from 'astro-icon';
+---
+
+<section class="contact reveal" id="contacts">
+    <div class="wrapper">
+        <div class="contact-body">
+            <div class="heading">
+                <h1>Contact</h1>
+            </div>
+            <div class="info-con">
+                <div class="contact-info">
+                    <div class="info-heading">
+                        <h1 class="one">Get in touch</h1>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                            sed do eiusmod tempor incididunt ut labore et dolore magna 
+                        </p>
+                    </div>
+                    <div class="info">
+                        <div class="icon">
+                            <Icon name="teenyicons:whatsapp-outline"/>
+                            <Icon name="lucide:mail"/>
+                            <Icon name="octicon:globe"/>
+                            <Icon name="mdi:google-maps"/>
+                        </div>
+                        <span></span>
+                        <div class="icon-info">
+                            <p>(+234) 901 234 5678</p>
+                            <p>contact@email.com</p>
+                            <p>www.archportfolio.le</p>
+                            <p>Nigeria</p>
+                        </div>
+                    </div>
+                </div>
+                <span></span>
+                <div class="contact-entry">
+                    <form action="">
+                        <input type="text" placeholder="name" required>
+                        <input type="email" placeholder="email" required>
+                        <textarea name="message" id="message" cols="30" rows="10" placeholder="Message" required></textarea>
+                        <input type="submit" name="send" id="send">
+                    </form>
+                </div>
+            </div> 
+        </div>
+    </div>
+</section>
+
+<style>
+    .contact{
+        overflow: auto;
+        height: 100%;
+        width: 100%;
+        line-height: 200%;
+        background-image: linear-gradient(#076585,#BBD2C5);
+    }
+
+    .contact .wrapper{
+        padding: 30px 10px;
+    }
+
+    .contact-body{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .heading{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    h1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        line-height: 3vh;
+        margin-top: 20px;
+        padding: 20px;
+        font-weight: bold;
+        font-size: xx-large;
+        opacity: 0;
+        animation: slideTop 1s ease forwards;
+        animation-delay: .5s;
+    }
+
+    p{
+        padding: 10px;
+    }
+    
+    .info-heading{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .one{
+        position: relative;
+        left: -10%;
+        font-size: x-large;
+        margin-top: 50px;
+    }
+
+    .info-con{
+        display: flex;
+        padding: 25px;
+    }
+
+    .contact-info{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: 350px;
+        padding: 25px;
+        opacity: 0;
+        animation: slideRight 1s ease forwards;
+        animation-delay: .7s;
+    }
+
+    .info{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        margin-left: auto;
+        left: -65px;
+    }
+
+    span{
+        padding: 10px;
+        width: 10px;
+    }
+
+    .contact-entry{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 25px;
+        max-width: 500px;
+        opacity: 0;
+        animation: slideLeft 1s ease forwards;
+        animation-delay: 1s;
+    }
+    
+    input{
+        width: 90%;
+        height: 15%;
+        box-sizing: border-box;
+        display: inline-block;
+        border-radius: 4px;
+        padding: 10px;
+        margin: 5px;
+        border: 1px solid #fff;
+        background-color: transparent;
+        color: #fff;
+        resize: vertical;
+    }
+
+    input::placeholder{
+        color:#fff;
+    }
+
+    input:focus{
+        background-color: #f8f8f8;
+        color: black;
+    }
+
+    input[type=text]{
+        padding: 20px;
+    }
+
+    input[type=email]{
+        padding: 20px;
+    }
+
+    input[type=submit]{
+        background-color: aquamarine;
+        cursor: pointer;
+        border: none;
+        font-size: medium;
+        font-weight: bold;
+    }
+
+    textarea{
+        width: 90%;
+        height: 55%;
+        margin: 5px;
+        box-sizing: border-box;
+        display: inline-block;
+        border-radius: 4px;
+        border: 1px solid #fff;
+        resize: none;
+        background-color: transparent;
+    }
+
+    textarea:focus{
+        background-color: #f8f8f8;
+        color: black;
+    }
+
+    textarea::placeholder{
+        padding: 20px;
+        color: #fff;
+    }
+
+    [astro-icon]{
+        height: 45px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 5px;
+    }
+</style>

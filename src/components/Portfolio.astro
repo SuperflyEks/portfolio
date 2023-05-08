@@ -1,0 +1,132 @@
+---
+import Card from './Card.astro';
+import { Icon } from 'astro-icon';
+
+const featuresData = [
+    {title: 'Feature 3', body: 'Lorem ipsum began as scrambled, nonsensical Latin derived from Ciceros 1st-century BC text De Finibus Bonorum et Malorum.'},
+    {title: 'Feature 2', body: 'Lorem ipsum began as scrambled, nonsensical Latin derived from Ciceros 1st-century BC text De Finibus Bonorum et Malorum.'},
+    {title: 'Feature 1', body: 'Lorem ipsum began as scrambled, nonsensical Latin derived from Ciceros 1st-century BC text De Finibus Bonorum et Malorum.'},
+];
+---
+
+<section class="portfolio reveal" id="portfolios">
+    <div class="wrapper">
+        <div class="full-port">
+            <div class="heading">
+                <h1>Portfolio</h1>
+                <p>
+                    So how did the classical Latin 
+                    become so incoherent? According 
+                    to McClintock, a 15th century typesetter 
+                    likely scrambled part of Cicero's De Finibus 
+                    in order to provide placeholder text to mockup 
+                    various fonts for a type specimen book.
+                </p>
+            </div>
+            <div class="card" id="slider">
+                <button type="button" id="left">
+                    <Icon name="ph:caret-left-bold"/>
+                </button>
+                <div class="card-container">
+                    {featuresData.map(feature => (
+                        <Card 
+                            title = {feature.title}
+                            body = {feature.body}
+                        />
+                    ))}
+                </div>
+                <button type="button" id="right">
+                    <Icon name="ph:caret-right-bold"/>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .portfolio{
+        overflow: auto;
+        height: 100%;
+        width: 100%;
+        line-height: 200%;
+        background-image: linear-gradient(#9796f0, #fbc7d4);
+    }
+
+    .portfolio .wrapper{
+        padding: 30px 10px;
+    }
+
+    .full-port{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .heading{
+        justify-content: center;
+        align-items: center;
+        max-width: 700px;
+        margin-top: 20px;
+        padding: 20px;
+    }
+
+    h1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        line-height: 3vh;
+        margin-top: 20px;
+        padding: 20px;
+        font-weight: bold;
+        font-size: xx-large;
+        opacity: 0;
+        animation: slideTop 1s ease forwards;
+        animation-delay: .5s;
+    }
+
+    p{
+        font-size: large;
+        opacity: 0;
+        animation: slideTop 1s ease forwards;
+        animation-delay: .7s;
+    }
+
+    .card{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 150px;
+        opacity: 0;
+        animation: slideTop 1s ease forwards;
+        animation-delay: 1s;
+    }
+
+    .card-container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    Card{
+        z-index: 1;
+        transition: left .4s cubic-bezier(.47,.13,.15,.89);
+    }
+
+    button{
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        opacity: 0;
+        animation: slideTop 1s ease forwards;
+        animation-delay: 1.2s;
+    }
+
+    [astro-icon]{
+        color: #000;
+        height: 40px;
+    }
+</style>
+
+<script src="../javascript/portfolio.js"></script>

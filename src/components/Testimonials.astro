@@ -1,0 +1,135 @@
+---
+import { Icon } from 'astro-icon';
+import Card from './Card.astro'
+
+const featuresData = [
+    {title: 'Feature 1', body: 'Lorem ipsum began as scrambled, nonsensical Latin derived from Ciceros 1st-century BC text De Finibus Bonorum et Malorum.'},
+    {title: 'Feature 2', body: 'Lorem ipsum began as scrambled, nonsensical Latin derived from Ciceros 1st-century BC text De Finibus Bonorum et Malorum.'},
+    {title: 'Feature 3', body: 'Lorem ipsum began as scrambled, nonsensical Latin derived from Ciceros 1st-century BC text De Finibus Bonorum et Malorum.'},
+    {title: 'Feature 4', body: 'Lorem ipsum began as scrambled, nonsensical Latin derived from Ciceros 1st-century BC text De Finibus Bonorum et Malorum.'}
+];
+---
+
+<section class="testimonials reveal" id="testimonials">
+    <div class="wrapper">
+        <div class="test-body">
+            <div class="test-head">
+                <div class="heading">
+                    <h1>Testimonials</h1>
+                    <h1>What Client Say</h1>
+                </div>
+                <div class="slide-but">
+                    <button>
+                        <Icon name="ph:caret-left-bold"/>
+                    </button>
+                    <span></span>
+                    <button>
+                        <Icon name="ph:caret-right-bold"/>
+                    </button>
+                </div>
+            </div>
+            <div class="test-card">
+                {featuresData.map(feature => (
+                    <Card 
+                        title = {feature.title}
+                        body = {feature.body}
+                    />
+                ))}
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .testimonials{
+        overflow: auto;
+        height: 100%;
+        width: 100%;
+        line-height: 200%;
+        background-image: linear-gradient(#fbc7d4, #076585);
+    }
+
+    .testimonials .wrapper{
+        padding: 30px 10px;
+    }
+
+    .test-body{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .test-heading{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    h1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        line-height: 3vh;
+        margin-top: 20px;
+        padding: 20px;
+        font-weight: bold;
+        font-size: xx-large;
+        opacity: 0;
+        animation: slideTop 1s ease forwards;
+        animation-delay: .5s;
+    }
+
+    h1:nth-child(2){
+        font-size: x-large;
+        margin-top: 50px;
+        opacity: 0;
+        animation: slideTop 1s ease forwards;
+        animation-delay: .7s;
+    }
+
+
+    .test-card{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        opacity: 0;
+        animation: slideTop 1s ease forwards;
+        animation-delay: 1s;
+    }
+
+    .slide-but{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        animation: slideTop 1s ease forwards;
+        animation-delay: 1s;
+    }
+
+    span{ 
+        padding: 30px;
+    }
+
+    button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #000;
+        border-radius: 50%;
+        background: transparent;
+        cursor: pointer;
+        width: 100px;
+        height: 50px;
+        margin-top: 70px;
+        margin-bottom: 40px;
+        padding: 40px;
+    }
+
+    [astro-icon]{
+        color: #000;
+        height: 80px;
+    }
+</style>
