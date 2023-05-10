@@ -8,9 +8,9 @@ let currentIndex = 0;
 
 
 const moveCards = (e) => {
-    if (e === 'prev') {
+    if (e === 'left') {
         currentIndex += 100;
-    } else if (e === 'next') {
+    } else if (e === 'right') {
         currentIndex -= 100;
     }
 
@@ -25,6 +25,6 @@ const moveCards = (e) => {
 }
 
 
-previous.addEventListener('click', () => moveCards('prev'));
+previous.addEventListener('click', () => moveCards('left'));
 
-next.addEventListener('click', () => moveCards('next'));
+next.addEventListener('click', () => moveCards('right'));
